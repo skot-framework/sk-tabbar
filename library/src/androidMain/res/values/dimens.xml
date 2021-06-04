@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tabbar_simple_tab_translate_y">5dp</dimen>
+</resources>
