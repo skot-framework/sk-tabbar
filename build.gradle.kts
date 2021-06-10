@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("tech.skot:plugin:1.0.0-alpha12")
+        classpath("tech.skot:plugin:1.0.0-alpha13")
     }
 }
 

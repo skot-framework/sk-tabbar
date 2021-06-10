@@ -1,7 +1,6 @@
 package tech.skot.libraries.tabbar
 
 import tech.skot.core.components.SKScreen
-import tech.skot.core.components.SKScreenVC
 import tech.skot.core.components.SKStack
 import tech.skot.libraries.tabbar.di.tabbarViewInjector
 

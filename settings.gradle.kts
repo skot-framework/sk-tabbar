@@ -1,2 +1,3 @@
-include(":library")
+include(":viewcontract")
+include(":viewmodel")
 include(":viewlegacy")
