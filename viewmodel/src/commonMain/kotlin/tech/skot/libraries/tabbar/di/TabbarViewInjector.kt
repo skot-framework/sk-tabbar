@@ -17,7 +17,8 @@ interface TabbarViewInjector {
         onTap: Function0<Unit>,
         iconInitial: Icon,
         labelColorInitial: Color,
-        translateY:Boolean
+        translateY:Boolean,
+        centerTextInitial:String?
     ): SimpleTabVC
     fun tabScreen(stack: SKStackVC): TabScreenVC
 }

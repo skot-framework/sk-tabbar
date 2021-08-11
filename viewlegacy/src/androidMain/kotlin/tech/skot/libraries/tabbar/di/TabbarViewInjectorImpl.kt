@@ -18,8 +18,9 @@ class TabbarViewInjectorImpl : TabbarViewInjector {
         onTap: () -> Unit,
         iconInitial: Icon,
         labelColorInitial: Color,
-        translateY:Boolean
-    ) = SimpleTabViewProxy(label, onTap, iconInitial, labelColorInitial, translateY)
+        translateY:Boolean,
+        centerTextInitial:String?
+    ) = SimpleTabViewProxy(label, onTap, iconInitial, labelColorInitial, translateY, centerTextInitial)
 
     override fun tabScreen(stack: SKStackVC) = TabScreenViewProxy(stack as SKStackViewProxy)
 }

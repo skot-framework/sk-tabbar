@@ -22,7 +22,7 @@ class BottomNavFrameViewProxy(
         tabs.forEach {
             it.inflateInParentAndBind(activity, fragment,binding.tabbar)
         }
-        return BottomNavFrameView(activity, fragment, binding)
+        return BottomNavFrameView(this, activity, fragment, binding)
     }
 
 

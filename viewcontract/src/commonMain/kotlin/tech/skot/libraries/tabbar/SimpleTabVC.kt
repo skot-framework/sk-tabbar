@@ -9,4 +9,7 @@ interface SimpleTabVC: TabVC {
     var icon: Icon
     var labelColor: Color
     val translateY:Boolean
+
+    var centerText: String?
+    fun animateIcon(newVal: String, onEnd: () -> Unit)
 }

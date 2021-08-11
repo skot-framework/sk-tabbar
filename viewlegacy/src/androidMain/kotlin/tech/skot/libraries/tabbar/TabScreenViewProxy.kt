@@ -32,7 +32,7 @@ class TabScreenViewProxy(override val stack: SKStackViewProxy
         fragment: Fragment?,
         binding: TabScreenBinding,
         collectingObservers: Boolean
-    ): TabScreenView = TabScreenView(activity, fragment, binding).apply {
+    ): TabScreenView = TabScreenView(this, activity, fragment, binding).apply {
         collectObservers = collectingObservers
         stack._bindTo(activity, fragment, binding.stack)
     }

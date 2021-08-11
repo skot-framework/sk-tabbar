@@ -6,7 +6,8 @@ import tech.skot.core.components.SKScreenView
 import tech.skot.libraries.tabbar.viewlegacy.databinding.TabScreenBinding
 
 class TabScreenView(
+    override val proxy: TabScreenViewProxy,
     activity: SKActivity,
     fragment: Fragment?,
     binding: TabScreenBinding
-) : SKScreenView<TabScreenBinding>(activity, fragment, binding)
+) : SKScreenView<TabScreenBinding>(proxy, activity, fragment, binding)

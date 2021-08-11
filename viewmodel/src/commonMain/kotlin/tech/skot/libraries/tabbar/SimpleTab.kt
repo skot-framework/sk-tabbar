@@ -20,7 +20,7 @@ class SimpleTab(val label: String, val selectedIcon: Icon? = null, val unSelecte
 
     override val view: SimpleTabVC = tabbarViewInjector.simpleTab(label = label, iconInitial = unSelectedIcon, labelColorInitial = simpleTabUnSelectedColor, onTap = {
         onSelect?.invoke()
-    }, translateY = translateY)
+    }, translateY = translateY, centerTextInitial = null)
 
 
 }
