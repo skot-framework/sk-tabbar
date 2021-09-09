@@ -9,5 +9,5 @@ class TabScreen(initialScreen: SKScreen<*>):SKScreen<TabScreenVC>() {
     init {
         stack.content = initialScreen
     }
-    override val view = tabbarViewInjector.tabScreen(stack.view)
+    override val view = tabbarViewInjector.tabScreen(this, stack.view)
 }

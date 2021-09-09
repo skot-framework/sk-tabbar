@@ -3,6 +3,7 @@ package tech.skot.libraries.tabbar.di
 import tech.skot.core.components.SKComponentVC
 import tech.skot.core.components.SKFrameVC
 import tech.skot.core.components.SKStackVC
+import tech.skot.core.components.SKVisiblityListener
 import tech.skot.core.di.get
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
@@ -20,7 +21,7 @@ interface TabbarViewInjector {
         translateY:Boolean,
         centerTextInitial:String?
     ): SimpleTabVC
-    fun tabScreen(stack: SKStackVC): TabScreenVC
+    fun tabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC): TabScreenVC
 }
 
 val tabbarViewInjector: TabbarViewInjector = get()

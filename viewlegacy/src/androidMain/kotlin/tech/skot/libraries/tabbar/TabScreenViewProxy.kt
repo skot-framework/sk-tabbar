@@ -7,11 +7,12 @@ import androidx.fragment.app.Fragment
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKScreenViewProxy
 import tech.skot.core.components.SKStackViewProxy
+import tech.skot.core.components.SKVisiblityListener
 import tech.skot.libraries.tabbar.viewlegacy.R
 import tech.skot.libraries.tabbar.viewlegacy.databinding.TabScreenBinding
 import java.lang.IllegalStateException
 
-class TabScreenViewProxy(override val stack: SKStackViewProxy
+class TabScreenViewProxy(override val visibilityListener: SKVisiblityListener, override val stack: SKStackViewProxy
 ) : SKScreenViewProxy<TabScreenBinding>(), TabScreenVC {
     override val layoutId: Int = R.layout.tab_screen
 

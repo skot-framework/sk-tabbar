@@ -22,7 +22,7 @@ class TabbarViewInjectorImpl : TabbarViewInjector {
         centerTextInitial:String?
     ) = SimpleTabViewProxy(label, onTap, iconInitial, labelColorInitial, translateY, centerTextInitial)
 
-    override fun tabScreen(stack: SKStackVC) = TabScreenViewProxy(stack as SKStackViewProxy)
+    override fun tabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC) = TabScreenViewProxy(visibilityListener, stack as SKStackViewProxy)
 }
 
 val tabbarModule = module<BaseInjector> {

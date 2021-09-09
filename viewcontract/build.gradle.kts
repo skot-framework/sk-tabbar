@@ -5,4 +5,4 @@ plugins {
 
 
 group = "tech.skot.libraries.tabbar"
-version = "0.0.1"
+version = Versions.version
