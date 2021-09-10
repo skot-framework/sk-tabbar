@@ -1,4 +1,4 @@
 object Versions {
-    const val groupSuffix = ".libraries.tabbar"
-    const val version = "0.0.1-alpha33"
+    const val group = "com.github.MathieuScotet.sk-tabbar"
+    const val version = "0.0.1-alpha34"
 }

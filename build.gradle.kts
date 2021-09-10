@@ -6,13 +6,13 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha33")
+        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha34")
     }
 }
 
 allprojects {
 
-    group = "${tech.skot.Versions.group}${Versions.groupSuffix}"
+    group = Versions.group
     version = Versions.version
 
     repositories {
