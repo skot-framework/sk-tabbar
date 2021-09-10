@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha31")
+        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha32")
     }
 }
 
