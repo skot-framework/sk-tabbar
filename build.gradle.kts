@@ -9,7 +9,8 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha44")
+        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha45")
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.5.30")
     }
 }
 
@@ -28,5 +29,18 @@ allprojects {
     }
 
     apply(plugin = "maven-publish")
+    apply(plugin = "org.jetbrains.dokka")
 
+
+}
+
+subprojects{
+    tasks {
+        named<org.jetbrains.dokka.gradle.DokkaTaskPartial>("dokkaHtmlPartial") {
+            suppressInheritedMembers.set(true)
+        }
+        named<org.jetbrains.dokka.gradle.DokkaTaskPartial>("dokkaGfmPartial") {
+            suppressInheritedMembers.set(true)
+        }
+    }
 }
