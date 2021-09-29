@@ -2,7 +2,7 @@ package tech.skot.libraries.tabbar
 
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
-import tech.skot.libraries.tabbar.di.tabbarViewInjector
+import tech.skot.libraries.tabbar.di.skTabbarViewInjector
 
 class SKSimpleTab(
     val label: String,
@@ -26,7 +26,7 @@ class SKSimpleTab(
 
         }
 
-    override val view: SKSimpleTabVC = tabbarViewInjector.skSimpleTab(label = label, iconInitial = unSelectedIcon, labelColorInitial = unSelectedColor, onTap = {
+    override val view: SKSimpleTabVC = skTabbarViewInjector.skSimpleTab(label = label, iconInitial = unSelectedIcon, labelColorInitial = unSelectedColor, onTap = {
         onSelect?.invoke()
     }, translateY = translateY, centerTextInitial = null)
 

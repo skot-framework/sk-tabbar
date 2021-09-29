@@ -11,7 +11,7 @@ import tech.skot.libraries.tabbar.SKBottomNavFrameVC
 import tech.skot.libraries.tabbar.SKSimpleTabVC
 import tech.skot.libraries.tabbar.SKTabScreenVC
 
-interface TabbarViewInjector {
+interface SKTabbarViewInjector {
     fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>): SKBottomNavFrameVC
     fun skSimpleTab(
         label: String,
@@ -24,4 +24,4 @@ interface TabbarViewInjector {
     fun skTabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC): SKTabScreenVC
 }
 
-val tabbarViewInjector: TabbarViewInjector = get()
+val skTabbarViewInjector: SKTabbarViewInjector = get()

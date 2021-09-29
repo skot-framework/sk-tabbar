@@ -7,9 +7,9 @@ android "legacy" est disponible
 
 Pour utiliser la librairie vous devez ajouter la ligne suivante à votre fichier _skot_librairies.properties_ de votre app ou de votre feature
 
-`com.github.MathieuScotet.sk-tabbar:0.0.1-alpha45,tech.skot.libraries.tabbar.di.tabbarModule`
+`com.github.MathieuScotet.sk-tabbar:0.0.1-alpha46,tech.skot.libraries.tabbar.di.skTabbarModule`
 
-dans le cas d'une feature vous devez également vous-même ajouter le module `tech.skot.libraries.tabbar.di.tabbarModule`
+dans le cas d'une feature vous devez également vous-même ajouter le module `tech.skot.libraries.tabbar.di.skTabbarModule`
 dans votre liste de modules
 
 ### ViewContract

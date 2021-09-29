@@ -9,7 +9,7 @@ import tech.skot.libraries.tabbar.SKBottomNavFrameViewProxy
 import tech.skot.libraries.tabbar.SKSimpleTabViewProxy
 import tech.skot.libraries.tabbar.SKTabScreenViewProxy
 
-class TabbarViewInjectorImpl : TabbarViewInjector {
+class SKTabbarViewInjectorImpl : SKTabbarViewInjector {
     override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>) =
         SKBottomNavFrameViewProxy(frame as SKFrameViewProxy, tabs as List<SKComponentViewProxy<*>>)
 
@@ -25,6 +25,6 @@ class TabbarViewInjectorImpl : TabbarViewInjector {
     override fun skTabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC) = SKTabScreenViewProxy(visibilityListener, stack as SKStackViewProxy)
 }
 
-val tabbarModule = module<BaseInjector> {
-    single { TabbarViewInjectorImpl() as TabbarViewInjector }
+val skTabbarModule = module<BaseInjector> {
+    single { SKTabbarViewInjectorImpl() as SKTabbarViewInjector }
 }
