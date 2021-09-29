@@ -13,16 +13,16 @@ import tech.skot.core.components.SKComponentView
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
 import tech.skot.libraries.tabbar.viewlegacy.R
-import tech.skot.libraries.tabbar.viewlegacy.databinding.SimpleTabBinding
+import tech.skot.libraries.tabbar.viewlegacy.databinding.SkSimpleTabBinding
 import tech.skot.view.extensions.setIcon
 import tech.skot.view.extensions.setOnClick
 
-class SimpleTabView(
-    override val proxy: SimpleTabViewProxy,
+class SKSimpleTabView(
+    override val proxy: SKSimpleTabViewProxy,
     activity: SKActivity,
     fragment: Fragment?,
-    binding: SimpleTabBinding
-) : SKComponentView<SimpleTabBinding>(proxy, activity, fragment, binding), SimpleTabRAI {
+    binding: SkSimpleTabBinding
+) : SKComponentView<SkSimpleTabBinding>(proxy, activity, fragment, binding), SimpleTabRAI {
 
 
     override fun onLabel(label: String) {
@@ -51,7 +51,7 @@ class SimpleTabView(
         binding.tvCenter.setFactory {
             TextView(activity).apply {
                 setTextSize(TypedValue.COMPLEX_UNIT_DIP, 10f)
-                setTextColor(ContextCompat.getColor(activity, R.color.tabbar_simple_tab_label_unselected))
+                setTextColor(proxy.labelColor)
             }
         }
     }

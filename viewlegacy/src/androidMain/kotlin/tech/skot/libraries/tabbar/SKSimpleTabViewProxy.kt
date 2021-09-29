@@ -9,18 +9,18 @@ import tech.skot.core.components.SKComponentViewProxy
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
 import tech.skot.libraries.tabbar.viewlegacy.R
-import tech.skot.libraries.tabbar.viewlegacy.databinding.SimpleTabBinding
+import tech.skot.libraries.tabbar.viewlegacy.databinding.SkSimpleTabBinding
 import tech.skot.view.live.MutableSKLiveData
 import tech.skot.view.live.SKMessage
 
-class SimpleTabViewProxy(
+class SKSimpleTabViewProxy(
         override val label: String,
         override val onTap: Function0<Unit>,
         iconInitial: Icon,
         labelColorInitial: Color,
         override val translateY: Boolean,
         centerTextInitial:String?
-) : SKComponentViewProxy<SimpleTabBinding>(), SimpleTabVC {
+) : SKComponentViewProxy<SkSimpleTabBinding>(), SKSimpleTabVC {
     private val iconLD: MutableSKLiveData<Icon> = MutableSKLiveData(iconInitial)
 
     override var icon: Icon by iconLD
@@ -29,7 +29,7 @@ class SimpleTabViewProxy(
 
     override var labelColor: Color by labelColorLD
 
-    override val layoutId: Int = R.layout.simple_tab
+    override val layoutId: Int = R.layout.sk_simple_tab
 
     private val centerTextLD: MutableSKLiveData<String?> = MutableSKLiveData(centerTextInitial)
 
@@ -44,19 +44,19 @@ class SimpleTabViewProxy(
     override fun saveState() {
     }
 
-    override fun bindingOf(view: View): SimpleTabBinding = SimpleTabBinding.bind(view)
+    override fun bindingOf(view: View): SkSimpleTabBinding = SkSimpleTabBinding.bind(view)
 
     override fun inflate(
             layoutInflater: LayoutInflater,
             parent: ViewGroup?,
             attachToParent: Boolean
-    ): SimpleTabBinding = SimpleTabBinding.inflate(layoutInflater, parent, attachToParent)
+    ): SkSimpleTabBinding = SkSimpleTabBinding.inflate(layoutInflater, parent, attachToParent)
     override fun bindTo(
             activity: SKActivity,
             fragment: Fragment?,
-            binding: SimpleTabBinding,
+            binding: SkSimpleTabBinding,
             collectingObservers: Boolean
-    ): SimpleTabView = SimpleTabView(this, activity, fragment, binding).apply {
+    ): SKSimpleTabView = SKSimpleTabView(this, activity, fragment, binding).apply {
         collectObservers = collectingObservers
         onLabel(label)
         onOnTap(onTap)

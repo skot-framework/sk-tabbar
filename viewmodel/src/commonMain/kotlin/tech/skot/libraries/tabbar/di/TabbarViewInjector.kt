@@ -7,21 +7,21 @@ import tech.skot.core.components.SKVisiblityListener
 import tech.skot.core.di.get
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
-import tech.skot.libraries.tabbar.BottomNavFrameVC
-import tech.skot.libraries.tabbar.SimpleTabVC
-import tech.skot.libraries.tabbar.TabScreenVC
+import tech.skot.libraries.tabbar.SKBottomNavFrameVC
+import tech.skot.libraries.tabbar.SKSimpleTabVC
+import tech.skot.libraries.tabbar.SKTabScreenVC
 
 interface TabbarViewInjector {
-    fun bottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>): BottomNavFrameVC
-    fun simpleTab(
+    fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>): SKBottomNavFrameVC
+    fun skSimpleTab(
         label: String,
         onTap: Function0<Unit>,
         iconInitial: Icon,
         labelColorInitial: Color,
         translateY:Boolean,
         centerTextInitial:String?
-    ): SimpleTabVC
-    fun tabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC): TabScreenVC
+    ): SKSimpleTabVC
+    fun skTabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC): SKTabScreenVC
 }
 
 val tabbarViewInjector: TabbarViewInjector = get()

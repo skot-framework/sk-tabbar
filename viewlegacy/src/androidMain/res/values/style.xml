@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="sk_tabbar_simpletab_label" format="reference"/>
+    <attr name="sk_tabbar_simpletab_tvcenter" format="reference"/>
+    <attr name="sk_tabbar_simpletab_ivicon" format="reference"/>
+
+
+    <style name="sk_tabbar_simpletab_label_default">
+        <item name="android:textSize">8dp</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+
+    <style name="sk_tabbar_simpletab_tvcenter_default">
+        <item name="android:textSize">10dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+    
+    <style name="sk_tabbar_simpletab_ivicon_default">
+
+    </style>
+</resources>

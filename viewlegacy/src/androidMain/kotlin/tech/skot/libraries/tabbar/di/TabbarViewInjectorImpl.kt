@@ -5,24 +5,24 @@ import tech.skot.core.di.BaseInjector
 import tech.skot.core.di.module
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
-import tech.skot.libraries.tabbar.BottomNavFrameViewProxy
-import tech.skot.libraries.tabbar.SimpleTabViewProxy
-import tech.skot.libraries.tabbar.TabScreenViewProxy
+import tech.skot.libraries.tabbar.SKBottomNavFrameViewProxy
+import tech.skot.libraries.tabbar.SKSimpleTabViewProxy
+import tech.skot.libraries.tabbar.SKTabScreenViewProxy
 
 class TabbarViewInjectorImpl : TabbarViewInjector {
-    override fun bottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>) =
-        BottomNavFrameViewProxy(frame as SKFrameViewProxy, tabs as List<SKComponentViewProxy<*>>)
+    override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>) =
+        SKBottomNavFrameViewProxy(frame as SKFrameViewProxy, tabs as List<SKComponentViewProxy<*>>)
 
-    override fun simpleTab(
+    override fun skSimpleTab(
         label: String,
         onTap: () -> Unit,
         iconInitial: Icon,
         labelColorInitial: Color,
         translateY:Boolean,
         centerTextInitial:String?
-    ) = SimpleTabViewProxy(label, onTap, iconInitial, labelColorInitial, translateY, centerTextInitial)
+    ) = SKSimpleTabViewProxy(label, onTap, iconInitial, labelColorInitial, translateY, centerTextInitial)
 
-    override fun tabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC) = TabScreenViewProxy(visibilityListener, stack as SKStackViewProxy)
+    override fun skTabScreen(visibilityListener:SKVisiblityListener, stack: SKStackVC) = SKTabScreenViewProxy(visibilityListener, stack as SKStackViewProxy)
 }
 
 val tabbarModule = module<BaseInjector> {

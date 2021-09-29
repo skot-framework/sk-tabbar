@@ -3,42 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="0dp"
-    android:layout_weight="1"
-    tools:layout_width="56dp"
-    android:foreground="?attr/selectableItemBackground"
     android:layout_height="wrap_content"
-    android:gravity="center">
+    android:layout_weight="1"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center"
+    tools:layout_width="56dp">
 
     <ImageView
         android:id="@+id/ivIcon"
+        style="?sk_tabbar_simpletab_ivicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/tvLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextSwitcher
         android:id="@+id/tvCenter"
+        style="?sk_tabbar_simpletab_tvcenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/ivIcon"
         app:layout_constraintBottom_toBottomOf="@id/ivIcon"
         app:layout_constraintLeft_toLeftOf="@id/ivIcon"
         app:layout_constraintRight_toRightOf="@id/ivIcon"
-        style="@style/tabbar_simple_tab_tvcenter"
-        />
+        app:layout_constraintTop_toTopOf="@id/ivIcon" />
 
     <TextView
         android:id="@+id/tvLabel"
-        style="@style/tabbar_simple_tab_label"
+        style="?sk_tabbar_simpletab_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivIcon"
-        />
+        app:layout_constraintTop_toBottomOf="@id/ivIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

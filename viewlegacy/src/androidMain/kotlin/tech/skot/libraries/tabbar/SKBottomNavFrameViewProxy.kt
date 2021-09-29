@@ -6,23 +6,23 @@ import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKComponentView
 import tech.skot.core.components.SKComponentViewProxy
 import tech.skot.core.components.SKFrameViewProxy
-import tech.skot.libraries.tabbar.viewlegacy.databinding.BottomNavFrameBinding
+import tech.skot.libraries.tabbar.viewlegacy.databinding.SkBottomNavFrameBinding
 
-class BottomNavFrameViewProxy(
+class SKBottomNavFrameViewProxy(
         override val frame: SKFrameViewProxy,
         override val tabs:List<SKComponentViewProxy<*>>
 
-):SKComponentViewProxy<BottomNavFrameBinding>(), BottomNavFrameVC {
+):SKComponentViewProxy<SkBottomNavFrameBinding>(), SKBottomNavFrameVC {
 
 
-    override fun bindingOf(view: View) = BottomNavFrameBinding.bind(view)
+    override fun bindingOf(view: View) = SkBottomNavFrameBinding.bind(view)
 
-    override fun bindTo(activity: SKActivity, fragment: Fragment?, binding: BottomNavFrameBinding, collectingObservers: Boolean): SKComponentView<BottomNavFrameBinding> {
+    override fun bindTo(activity: SKActivity, fragment: Fragment?, binding: SkBottomNavFrameBinding, collectingObservers: Boolean): SKComponentView<SkBottomNavFrameBinding> {
         frame._bindTo(activity, fragment, binding.frame)
         tabs.forEach {
             it.inflateInParentAndBind(activity, fragment,binding.tabbar)
         }
-        return BottomNavFrameView(this, activity, fragment, binding)
+        return SKBottomNavFrameView(this, activity, fragment, binding)
     }
 
 

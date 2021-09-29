@@ -3,7 +3,7 @@ package tech.skot.libraries.tabbar
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
 
-interface SimpleTabVC: TabVC {
+interface SKSimpleTabVC: SKTabVC {
     val onTap:()->Unit
     val label:String
     var icon: Icon

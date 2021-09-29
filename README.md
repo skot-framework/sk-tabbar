@@ -1,4 +1,4 @@
-# SKVideo
+# SK-Tabbar
 
 un composant Skot pour gérer une barre d'onglets en bas de l'écran Pour l'instant seule la version
 android "legacy" est disponible
@@ -28,7 +28,6 @@ interface MyScreenVC : SKScreenVC {
 ajouter à votre layout l'include bottom_nav_frame
 
 ```xml
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="@color/white">
@@ -37,6 +36,17 @@ ajouter à votre layout l'include bottom_nav_frame
 
     <include android:id="@+id/loader" layout="@layout/loader" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+
+vous devez fournir des valeurs pour le theming :
+
+(ici avec juste les valeurs par dafaut)
+
+```xml
+<item name="sk_tabbar_simpletab_label">@style/sk_tabbar_simpletab_label_default</item>
+<item name="sk_tabbar_simpletab_tvcenter">@style/sk_tabbar_simpletab_tvcenter_default</item>
+<item name="sk_tabbar_simpletab_ivicon">@style/sk_tabbar_simpletab_ivicon_default</item>
 ```
 
 ### ViewModel
