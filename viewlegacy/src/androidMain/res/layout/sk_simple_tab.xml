@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/ivIcon"
-        style="?sk_tabbar_simpletab_ivicon"
+        style="?attr/sk_tabbar_simpletab_ivicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/tvLabel"
@@ -22,7 +22,7 @@
 
     <TextSwitcher
         android:id="@+id/tvCenter"
-        style="?sk_tabbar_simpletab_tvcenter"
+        style="?attr/sk_tabbar_simpletab_tvcenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/ivIcon"
@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/tvLabel"
-        style="?sk_tabbar_simpletab_label"
+        style="?attr/sk_tabbar_simpletab_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

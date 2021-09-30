@@ -12,9 +12,6 @@
 
     <LinearLayout
         android:id="@+id/tabbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="4dp"
-        android:gravity="bottom"
+        style="?attr/sk_tabbar_bottom_nav_frame_linear"
         android:orientation="horizontal" />
 </LinearLayout>

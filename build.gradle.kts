@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha46")
+        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha48")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.5.30")
     }
 }

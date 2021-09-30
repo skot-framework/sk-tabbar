@@ -44,6 +44,7 @@ vous devez fournir des valeurs pour le theming :
 (ici avec juste les valeurs par dafaut)
 
 ```xml
+<item name="sk_tabbar_bottom_nav_frame_linear">@style/sk_tabbar_bottom_nav_frame_linear_default</item>
 <item name="sk_tabbar_simpletab_label">@style/sk_tabbar_simpletab_label_default</item>
 <item name="sk_tabbar_simpletab_tvcenter">@style/sk_tabbar_simpletab_tvcenter_default</item>
 <item name="sk_tabbar_simpletab_ivicon">@style/sk_tabbar_simpletab_ivicon_default</item>
