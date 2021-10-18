@@ -1,15 +1,15 @@
 buildscript {
     repositories {
         google()
-        mavenCentral()
         mavenLocal()
+        mavenCentral()
         maven {
             url = uri("https://jitpack.io")
         }
     }
 
     dependencies {
-        classpath("com.github.MathieuScotet.skot:plugin:1.0.0-alpha48")
+        classpath("com.github.skot-framework.skot:plugin:${Versions.framework}")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.5.30")
     }
 }
@@ -17,7 +17,7 @@ buildscript {
 allprojects {
 
     group = Versions.group
-    version = Versions.version
+    version = "${Versions.library}_${Versions.framework}"
 
     repositories {
         google()
