@@ -20,8 +20,9 @@ class SKBottomNavFrame(val tabs: List<TabConf>, selectedTab: TabConf = tabs.firs
         fun tabWithStack(
             tab: SKTab<*>,
             rootScreen: () -> SKScreen<*>,
+            onRootAndBackPressed: (() -> Unit)? = null
         ): TabConf {
-            val tabScreen = SKTabScreen(rootScreen())
+            val tabScreen = SKTabScreen(rootScreen(), onRootAndBackPressed)
             return TabConf(
                 tab = tab,
                 screen = tabScreen,
