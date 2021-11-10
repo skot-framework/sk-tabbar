@@ -54,10 +54,8 @@ class SKSimpleTabViewProxy(
     override fun bindTo(
             activity: SKActivity,
             fragment: Fragment?,
-            binding: SkSimpleTabBinding,
-            collectingObservers: Boolean
+            binding: SkSimpleTabBinding
     ): SKSimpleTabView = SKSimpleTabView(this, activity, fragment, binding).apply {
-        collectObservers = collectingObservers
         onLabel(label)
         onOnTap(onTap)
         onTranslateY(translateY)

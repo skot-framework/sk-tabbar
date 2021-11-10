@@ -31,11 +31,9 @@ class SKTabScreenViewProxy(override val visibilityListener: SKVisiblityListener,
     override fun bindTo(
         activity: SKActivity,
         fragment: Fragment?,
-        binding: SkTabScreenBinding,
-        collectingObservers: Boolean
+        binding: SkTabScreenBinding
     ): SKTabScreenView = SKTabScreenView(this, activity, fragment, binding).apply {
-        collectObservers = collectingObservers
-        stack._bindTo(activity, fragment, binding.stack)
+        subViews.add(stack._bindTo(activity, fragment, binding.stack))
     }
 }
 

@@ -17,7 +17,7 @@ class SKBottomNavFrameViewProxy(
 
     override fun bindingOf(view: View) = SkBottomNavFrameBinding.bind(view)
 
-    override fun bindTo(activity: SKActivity, fragment: Fragment?, binding: SkBottomNavFrameBinding, collectingObservers: Boolean): SKComponentView<SkBottomNavFrameBinding> {
+    override fun bindTo(activity: SKActivity, fragment: Fragment?, binding: SkBottomNavFrameBinding): SKComponentView<SkBottomNavFrameBinding> {
         frame._bindTo(activity, fragment, binding.frame)
         tabs.forEach {
             it.inflateInParentAndBind(activity, fragment,binding.tabbar)
