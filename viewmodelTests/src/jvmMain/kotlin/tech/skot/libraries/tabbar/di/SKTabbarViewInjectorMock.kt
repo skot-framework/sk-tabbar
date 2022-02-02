@@ -1,12 +1,12 @@
 package tech.skot.libraries.tabbar.di
 
 import tech.skot.core.components.*
-import tech.skot.core.di.BaseInjector
 import tech.skot.core.di.InjectorMock
 import tech.skot.core.di.module
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
 import tech.skot.libraries.tabbar.SKBottomNavFrameViewMock
+import tech.skot.libraries.tabbar.SKColorTabVC
 import tech.skot.libraries.tabbar.SKSimpleTabViewMock
 import tech.skot.libraries.tabbar.SKTabScreenViewMock
 
@@ -23,6 +23,15 @@ class SKTabbarViewInjectorMock : SKTabbarViewInjector {
             centerTextInitial: String?
     ) = SKSimpleTabViewMock(label, onTap, iconInitial, labelColorInitial, translateY, centerTextInitial)
 
+    override fun skColorTab(
+        icon: Icon,
+        iconTintInitial: Color,
+        backgroundColorInitial: Color,
+        badgeInitial: Boolean,
+        onTap: () -> Unit
+    ): SKColorTabVC {
+        TODO("Not yet implemented")
+    }
     override fun skTabScreen(visibilityListener: SKVisiblityListener, stack: SKStackVC) = SKTabScreenViewMock(stack as SKStackViewMock)
 }
 

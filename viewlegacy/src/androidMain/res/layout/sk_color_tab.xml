@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?sk_tabbar_colortab_root"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center"
+    tools:layout_width="56dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        style="?sk_tabbar_colortab_ivicon"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/badge"
+        style="?sk_tabbar_colortab_badge_style"
+        android:src="?sk_tabbar_colortab_badge_drawable"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

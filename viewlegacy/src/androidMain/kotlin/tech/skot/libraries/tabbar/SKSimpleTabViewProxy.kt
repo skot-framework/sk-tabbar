@@ -18,8 +18,8 @@ class SKSimpleTabViewProxy(
         override val onTap: Function0<Unit>,
         iconInitial: Icon,
         labelColorInitial: Color,
-        override val translateY: Boolean,
-        centerTextInitial:String?
+        override val translateY: Boolean = false,
+        centerTextInitial:String? = null
 ) : SKComponentViewProxy<SkSimpleTabBinding>(), SKSimpleTabVC {
     private val iconLD: MutableSKLiveData<Icon> = MutableSKLiveData(iconInitial)
 
@@ -50,7 +50,9 @@ class SKSimpleTabViewProxy(
             layoutInflater: LayoutInflater,
             parent: ViewGroup?,
             attachToParent: Boolean
-    ): SkSimpleTabBinding = SkSimpleTabBinding.inflate(layoutInflater, parent, attachToParent)
+    ): SkSimpleTabBinding = SkSimpleTabBinding.inflate(layoutInflater, parent, attachToParent).also {
+        it.root.tag = this.hashCode()
+    }
     override fun bindTo(
             activity: SKActivity,
             fragment: Fragment?,

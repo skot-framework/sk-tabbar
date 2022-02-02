@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <item name="android:windowBackground">#FFFFFF</item>
+
+        <item name="sk_tabbar_bottom_nav_frame_linear">@style/sk_tabbar_bottom_nav_frame_linear_default</item>
+        <item name="sk_tabbar_simpletab_label">@style/sk_tabbar_simpletab_label_default</item>
+        <item name="sk_tabbar_simpletab_tvcenter">@style/sk_tabbar_simpletab_tvcenter_default</item>
+        <item name="sk_tabbar_simpletab_ivicon">@style/sk_tabbar_simpletab_ivicon_default</item>
+
+        <item name="sk_tabbar_colortab_root">@style/sk_tabbar_colortab_root_default</item>
+        <item name="sk_tabbar_colortab_ivicon">@style/sk_tabbar_colortab_ivicon_default</item>
+        <item name="sk_tabbar_colortab_badge_style">@style/sk_tabbar_colortab_badge_style_default</item>
+        <item name="sk_tabbar_colortab_badge_drawable">@drawable/red_badge</item>
+    </style>
+
+</resources>

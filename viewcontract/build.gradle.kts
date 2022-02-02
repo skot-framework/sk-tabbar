@@ -30,6 +30,11 @@ publishing {
                     name.set("Mathieu Scotet")
                     email.set("mscotet.lmit@gmail.com")
                 }
+                developer {
+                    id.set("sgueniot")
+                    name.set("Sylvain Guéniot")
+                    email.set("sylvain.gueniot@gmail.com")
+                }
             }
             scm {
                 connection.set("scm:git:github.com/skot-framework/sk-tabbar.git")
