@@ -6,22 +6,29 @@ import tech.skot.core.di.module
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
 import tech.skot.libraries.tabbar.SKBottomNavFrameViewMock
-import tech.skot.libraries.tabbar.SKColorTabVC
+import tech.skot.libraries.tabbar.SKColorTabViewMock
 import tech.skot.libraries.tabbar.SKSimpleTabViewMock
 import tech.skot.libraries.tabbar.SKTabScreenViewMock
 
 class SKTabbarViewInjectorMock : SKTabbarViewInjector {
     override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>) =
-            SKBottomNavFrameViewMock(frame as SKFrameViewMock, tabs as List<SKComponentViewMock>)
+        SKBottomNavFrameViewMock(frame as SKFrameViewMock, tabs as List<SKComponentViewMock>)
 
     override fun skSimpleTab(
-            label: String,
-            onTap: () -> Unit,
-            iconInitial: Icon,
-            labelColorInitial: Color,
-            translateY: Boolean,
-            centerTextInitial: String?
-    ) = SKSimpleTabViewMock(label, onTap, iconInitial, labelColorInitial, translateY, centerTextInitial)
+        label: String,
+        onTap: () -> Unit,
+        iconInitial: Icon,
+        labelColorInitial: Color,
+        translateY: Boolean,
+        centerTextInitial: String?
+    ) = SKSimpleTabViewMock(
+        label,
+        onTap,
+        iconInitial,
+        labelColorInitial,
+        translateY,
+        centerTextInitial
+    )
 
     override fun skColorTab(
         icon: Icon,
@@ -29,10 +36,10 @@ class SKTabbarViewInjectorMock : SKTabbarViewInjector {
         backgroundColorInitial: Color,
         badgeInitial: Boolean,
         onTap: () -> Unit
-    ): SKColorTabVC {
-        TODO("Not yet implemented")
-    }
-    override fun skTabScreen(visibilityListener: SKVisiblityListener, stack: SKStackVC) = SKTabScreenViewMock(stack as SKStackViewMock)
+    ) = SKColorTabViewMock(icon, iconTintInitial, backgroundColorInitial, badgeInitial, onTap)
+
+    override fun skTabScreen(visibilityListener: SKVisiblityListener, stack: SKStackVC) =
+        SKTabScreenViewMock(stack as SKStackViewMock)
 }
 
 val skTabbarModuleMock = module<InjectorMock> {
