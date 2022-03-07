@@ -36,7 +36,7 @@
 
 
     <style name="sk_tabbar_colortab_root_default">
-        <item name="android:layout_height">49dp</item>
+        <item name="android:layout_height">@dimen/sk_tabbar_colortab_root_default_height</item>
     </style>
 
     <style name="sk_tabbar_colortab_ivicon_default">
