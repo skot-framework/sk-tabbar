@@ -1,10 +1,10 @@
 package tech.skot.libraries.tabbar
 
-import android.content.res.ColorStateList
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKComponentView
+import tech.skot.core.setImageTint
+import tech.skot.core.setBackground
 import tech.skot.core.view.Color
 import tech.skot.core.view.Icon
 import tech.skot.libraries.tabbar.viewlegacy.databinding.SkColorTabBinding
@@ -29,11 +29,11 @@ class SKColorTabView(
     }
 
     fun onIconTint(iconTint: Color) {
-        binding.ivIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, iconTint.res))
+        binding.ivIcon.setImageTint(iconTint)
     }
 
     fun onBackgroundColor(backgroundColor:Color) {
-        binding.root.setBackgroundColor(ContextCompat.getColor(context, backgroundColor.res))
+        binding.root.setBackground(backgroundColor)
     }
 
     fun onBadge(badge:Boolean) {
