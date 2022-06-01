@@ -6,9 +6,9 @@ import tech.skot.core.components.SKScreen
 import tech.skot.libraries.tabbar.di.skTabbarViewInjector
 
 
-class SKBottomNavFrame(val tabs: List<TabConf>, selectedTab: TabConf = tabs.first()) :
+class SKBottomNavFrame(addTabs:Boolean = true, val tabs: List<TabConf>, selectedTab: TabConf = tabs.first()) :
     SKComponent<SKBottomNavFrameVC>() {
-    constructor(vararg tabs: TabConf) : this(tabs.toList())
+    constructor(addTabs:Boolean = true, vararg tabs: TabConf) : this(addTabs, tabs.toList())
 
     open class TabConf(
         val tab: SKTab<*>,
@@ -65,7 +65,7 @@ class SKBottomNavFrame(val tabs: List<TabConf>, selectedTab: TabConf = tabs.firs
         selected = selectedTab
     }
 
-    override val view = skTabbarViewInjector.skBottomNavFrame(frame.view, tabs.map { it.tab.view })
+    override val view = skTabbarViewInjector.skBottomNavFrame(frame.view, tabs.map { it.tab.view }, addTabs = addTabs)
 
 }
 

@@ -11,8 +11,8 @@ import tech.skot.libraries.tabbar.SKSimpleTabViewMock
 import tech.skot.libraries.tabbar.SKTabScreenViewMock
 
 class SKTabbarViewInjectorMock : SKTabbarViewInjector {
-    override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>) =
-        SKBottomNavFrameViewMock(frame as SKFrameViewMock, tabs as List<SKComponentViewMock>)
+    override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>, addTabs:Boolean) =
+        SKBottomNavFrameViewMock(frame as SKFrameViewMock, tabs as List<SKComponentViewMock>, addTabs)
 
     override fun skSimpleTab(
         label: String,

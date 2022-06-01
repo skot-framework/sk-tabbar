@@ -5,5 +5,6 @@ import tech.skot.core.components.SKComponentViewMock
 import tech.skot.core.components.SKFrameVC
 
 class SKBottomNavFrameViewMock(
-        override val frame: SKFrameVC, override val tabs: List<SKComponentVC>
+        override val frame: SKFrameVC, override val tabs: List<SKComponentVC>,
+        override val addTabs: Boolean
 ) : SKComponentViewMock(), SKBottomNavFrameVC

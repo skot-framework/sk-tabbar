@@ -8,8 +8,8 @@ import tech.skot.core.view.Icon
 import tech.skot.libraries.tabbar.*
 
 class SKTabbarViewInjectorImpl : SKTabbarViewInjector {
-    override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>) =
-        SKBottomNavFrameViewProxy(frame as SKFrameViewProxy, tabs as List<SKComponentViewProxy<*>>)
+    override fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>, addTabs:Boolean) =
+        SKBottomNavFrameViewProxy(frame as SKFrameViewProxy, tabs as List<SKComponentViewProxy<*>>, addTabs)
 
     override fun skSimpleTab(
         label: String,

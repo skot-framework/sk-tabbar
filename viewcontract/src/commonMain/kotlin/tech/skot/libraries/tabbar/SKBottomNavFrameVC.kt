@@ -7,4 +7,5 @@ import tech.skot.core.components.SKFrameVC
 interface SKBottomNavFrameVC: SKComponentVC {
     val frame:SKFrameVC
     val tabs:List<SKComponentVC>
+    val addTabs:Boolean
 }

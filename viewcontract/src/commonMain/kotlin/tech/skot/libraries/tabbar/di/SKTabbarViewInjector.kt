@@ -13,7 +13,7 @@ import tech.skot.libraries.tabbar.SKSimpleTabVC
 import tech.skot.libraries.tabbar.SKTabScreenVC
 
 interface SKTabbarViewInjector {
-    fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>): SKBottomNavFrameVC
+    fun skBottomNavFrame(frame: SKFrameVC, tabs: List<SKComponentVC>, addTabs:Boolean): SKBottomNavFrameVC
     fun skSimpleTab(
         label: String,
         onTap: Function0<Unit>,
