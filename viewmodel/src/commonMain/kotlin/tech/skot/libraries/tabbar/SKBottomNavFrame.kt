@@ -8,7 +8,8 @@ import tech.skot.libraries.tabbar.di.skTabbarViewInjector
 
 class SKBottomNavFrame(addTabs:Boolean = true, val tabs: List<TabConf>, selectedTab: TabConf = tabs.first()) :
     SKComponent<SKBottomNavFrameVC>() {
-    constructor(addTabs:Boolean = true, vararg tabs: TabConf) : this(addTabs, tabs.toList())
+
+    constructor(vararg tabs: TabConf) : this(true, tabs.toList())
 
     open class TabConf(
         val tab: SKTab<*>,
