@@ -10,7 +10,8 @@ class SKSimpleTab(
     val unSelectedIcon: Icon,
     val selectedColor: Color? = null,
     val unSelectedColor: Color,
-    translateY: Boolean = false
+    translateY: Boolean = false,
+    val onTapped: (()->Unit)? = null
 ) : SKTab<SKSimpleTabVC>() {
 
     override var selected: Boolean = false
@@ -26,9 +27,17 @@ class SKSimpleTab(
 
         }
 
-    override val view: SKSimpleTabVC = skTabbarViewInjector.skSimpleTab(label = label, iconInitial = unSelectedIcon, labelColorInitial = unSelectedColor, onTap = {
-        onSelect?.invoke()
-    }, translateY = translateY, centerTextInitial = null)
+    override val view: SKSimpleTabVC = skTabbarViewInjector.skSimpleTab(
+        label = label,
+        iconInitial = unSelectedIcon,
+        labelColorInitial = unSelectedColor,
+        onTap = {
+            onSelect?.invoke()
+            onTapped?.invoke()
+        },
+        translateY = translateY,
+        centerTextInitial = null
+    )
 
 
 }
