@@ -17,7 +17,7 @@ interface SKTabbarViewInjector {
     fun skSimpleTab(
         label: String,
         onTap: Function0<Unit>,
-        iconInitial: Icon,
+        iconInitial: Icon?,
         labelColorInitial: Color,
         translateY:Boolean,
         centerTextInitial:String?

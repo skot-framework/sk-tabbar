@@ -14,7 +14,7 @@ class SKTabbarViewInjectorImpl : SKTabbarViewInjector {
     override fun skSimpleTab(
         label: String,
         onTap: () -> Unit,
-        iconInitial: Icon,
+        iconInitial: Icon?,
         labelColorInitial: Color,
         translateY:Boolean,
         centerTextInitial:String?

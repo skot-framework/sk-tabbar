@@ -7,12 +7,12 @@ import tech.skot.core.view.Icon
 class SKSimpleTabViewMock(
         override val label: String,
         override val onTap: Function0<Unit>,
-        iconInitial: Icon,
+        iconInitial: Icon?,
         labelColorInitial: Color,
         override val translateY:Boolean,
         centerTextInitial:String?
 ): SKComponentViewMock(), SKSimpleTabVC {
-    override var icon: Icon = iconInitial
+    override var icon: Icon? = iconInitial
     override var labelColor: Color = labelColorInitial
     override var centerText: String? = centerTextInitial
 

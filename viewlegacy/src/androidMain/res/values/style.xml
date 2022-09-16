@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="sk_tabbar_bottom_nav_frame_linear" format="reference"/>
+
+    <attr name="sk_tabbar_simpletab" format="reference"/>
     <attr name="sk_tabbar_simpletab_label" format="reference"/>
     <attr name="sk_tabbar_simpletab_tvcenter" format="reference"/>
     <attr name="sk_tabbar_simpletab_ivicon" format="reference"/>
@@ -16,6 +18,12 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingBottom">4dp</item>
         <item name="android:gravity">bottom</item>
+        <item name="android:clipChildren">false</item>
+    </style>
+
+    <style name="sk_tabbar_simpletab_default">
+
+
     </style>
 
     <style name="sk_tabbar_simpletab_label_default">
@@ -30,6 +38,8 @@
     </style>
     
     <style name="sk_tabbar_simpletab_ivicon_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="layout_constraintTop_toTopOf">parent</item>
         <item name="layout_constraintRight_toRightOf">parent</item>
     </style>

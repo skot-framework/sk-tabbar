@@ -37,8 +37,9 @@ class SKSimpleTabView(
         binding.tvLabel.setTextColor(labelColor)
     }
 
-    override fun onIcon(icon: Icon) {
-        binding.ivIcon.setIcon(icon)
+    override fun onIcon(icon: Icon?) {
+        icon?.let { binding.ivIcon.setIcon(it) } ?: run { binding.ivIcon.setImageDrawable(null) }
+
     }
 
     override fun onTranslateY(value: Boolean) {

@@ -16,14 +16,14 @@ import tech.skot.view.live.SKMessage
 class SKSimpleTabViewProxy(
         override val label: String,
         override val onTap: Function0<Unit>,
-        iconInitial: Icon,
+        iconInitial: Icon?,
         labelColorInitial: Color,
         override val translateY: Boolean = false,
         centerTextInitial:String? = null
 ) : SKComponentViewProxy<SkSimpleTabBinding>(), SKSimpleTabVC {
-    private val iconLD: MutableSKLiveData<Icon> = MutableSKLiveData(iconInitial)
+    private val iconLD: MutableSKLiveData<Icon?> = MutableSKLiveData(iconInitial)
 
-    override var icon: Icon by iconLD
+    override var icon: Icon? by iconLD
 
     private val labelColorLD: MutableSKLiveData<Color> = MutableSKLiveData(labelColorInitial)
 
@@ -81,7 +81,7 @@ interface SimpleTabRAI {
 
     fun onOnTap(onTap: Function0<Unit>)
 
-    fun onIcon(icon: Icon)
+    fun onIcon(icon: Icon?)
 
     fun onLabelColor(labelColor: Color)
 

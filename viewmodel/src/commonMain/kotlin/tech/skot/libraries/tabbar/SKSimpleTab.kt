@@ -7,7 +7,7 @@ import tech.skot.libraries.tabbar.di.skTabbarViewInjector
 class SKSimpleTab(
     val label: String,
     val selectedIcon: Icon? = null,
-    val unSelectedIcon: Icon,
+    val unSelectedIcon: Icon?,
     val selectedColor: Color? = null,
     val unSelectedColor: Color,
     translateY: Boolean = false,
