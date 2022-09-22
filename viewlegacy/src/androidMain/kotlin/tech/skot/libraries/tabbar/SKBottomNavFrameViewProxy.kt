@@ -1,8 +1,11 @@
 package tech.skot.libraries.tabbar
 
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKComponentView
 import tech.skot.core.components.SKComponentViewProxy
@@ -14,17 +17,18 @@ class SKBottomNavFrameViewProxy(
         override val tabs:List<SKComponentViewProxy<*>>,
         override val addTabs:Boolean = true
 
-):SKComponentViewProxy<SkBottomNavFrameBinding>(), SKBottomNavFrameVC {
+):SKComponentViewProxy<View>(), SKBottomNavFrameVC {
 
 
-    override fun bindingOf(view: View) = SkBottomNavFrameBinding.bind(view)
+    override fun bindTo(activity: SKActivity, fragment: Fragment?, binding: View): SKComponentView<View> {
 
-    override fun bindTo(activity: SKActivity, fragment: Fragment?, binding: SkBottomNavFrameBinding): SKComponentView<SkBottomNavFrameBinding> {
-        frame._bindTo(activity, fragment, binding.frame)
+        val frameView = binding.findViewWithTag<FrameLayout>("sk_tabbar_frame")
+        val tabbarView = binding.findViewWithTag<ViewGroup>("sk_tabbar_tabbar")
+        frame._bindTo(activity, fragment, frameView)
         return SKBottomNavFrameView(this, activity, fragment, binding).also {
             if (addTabs) {
                 tabs.forEach {
-                    it.inflateInParentAndBind(activity, fragment,binding.tabbar)
+                    it.inflateInParentAndBind(activity, fragment,tabbarView)
                 }
             }
         }

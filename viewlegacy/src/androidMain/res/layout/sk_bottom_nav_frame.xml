@@ -6,12 +6,14 @@
 
     <FrameLayout
         android:id="@+id/frame"
+        android:tag="sk_tabbar_frame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
     <LinearLayout
         android:id="@+id/tabbar"
+        android:tag="sk_tabbar_tabbar"
         style="?attr/sk_tabbar_bottom_nav_frame_linear"
         android:orientation="horizontal" />
 </LinearLayout>
