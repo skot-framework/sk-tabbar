@@ -6,7 +6,11 @@ import tech.skot.core.components.SKScreen
 import tech.skot.libraries.tabbar.di.skTabbarViewInjector
 
 
-class SKBottomNavFrame(addTabs:Boolean = true, val tabs: List<TabConf>, selectedTab: TabConf = tabs.first()) :
+class SKBottomNavFrame(
+    addTabs: Boolean = true,
+    val tabs: List<TabConf>,
+    selectedTab: TabConf = tabs.first(),
+) :
     SKComponent<SKBottomNavFrameVC>() {
 
     constructor(vararg tabs: TabConf) : this(true, tabs.toList())
@@ -14,22 +18,31 @@ class SKBottomNavFrame(addTabs:Boolean = true, val tabs: List<TabConf>, selected
     open class TabConf(
         val tab: SKTab<*>,
         val screen: SKScreen<*>?,
-        val onReSelect: (() -> Unit)? = null
+        val onReSelect: (() -> Unit)? = null,
     )
 
     companion object {
         fun tabWithStack(
             tab: SKTab<*>,
             rootScreen: () -> SKScreen<*>,
-            onRootAndBackPressed: (() -> Unit)? = null
+            recreateRootOnReselect: Boolean = true,
+            onRootAndBackPressed: (() -> Unit)? = null,
         ): TabConf {
             val tabScreen = SKTabScreen(rootScreen(), onRootAndBackPressed)
             return TabConf(
                 tab = tab,
                 screen = tabScreen,
-                onReSelect = {
-                    tabScreen.stack.content = rootScreen()
+                onReSelect = if (recreateRootOnReselect) {
+                    {
+                        tabScreen.stack.content = rootScreen()
+                    }
+                } else {
+                    {
+                        tabScreen.stack.state.screens.firstOrNull()?.removeAllScreensOnTop()
+
+                    }
                 }
+
             )
         }
     }
@@ -66,7 +79,11 @@ class SKBottomNavFrame(addTabs:Boolean = true, val tabs: List<TabConf>, selected
         selected = selectedTab
     }
 
-    override val view = skTabbarViewInjector.skBottomNavFrame(frame.view, tabs.map { it.tab.view }, addTabs = addTabs)
+    override val view = skTabbarViewInjector.skBottomNavFrame(
+        frame.view,
+        tabs.map { it.tab.view },
+        addTabs = addTabs
+    )
 
 }
 

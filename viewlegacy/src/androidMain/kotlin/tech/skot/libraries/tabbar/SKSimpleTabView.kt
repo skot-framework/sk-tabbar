@@ -73,11 +73,11 @@ class SKSimpleTabView(
             play(ObjectAnimator.ofFloat(binding.ivIcon, "scaleX", 1f, 1.5f, 1f).apply { duration = ANIMATION_DURATION })
                 .with(ObjectAnimator.ofFloat(binding.ivIcon, "scaleY", 1f, 1.5f, 1f).apply { duration = ANIMATION_DURATION })
             addListener(object : Animator.AnimatorListener {
-                override fun onAnimationStart(p0: Animator?) {
+                override fun onAnimationStart(p0: Animator) {
                     // nu
                 }
 
-                override fun onAnimationEnd(p0: Animator?) {
+                override fun onAnimationEnd(p0: Animator) {
                     binding.tvCenter.apply {
                         inAnimation = null
                         outAnimation = null
@@ -85,11 +85,11 @@ class SKSimpleTabView(
                     onEnd()
                 }
 
-                override fun onAnimationCancel(p0: Animator?) {
+                override fun onAnimationCancel(p0: Animator) {
                     // nu
                 }
 
-                override fun onAnimationRepeat(p0: Animator?) {
+                override fun onAnimationRepeat(p0: Animator) {
                     // nu
                 }
             })
